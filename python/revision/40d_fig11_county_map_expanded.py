@@ -11,7 +11,7 @@ from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 from matplotlib import font_manager
 from shapely.geometry import box
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts"))
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision"))
 import official_boundary as ob
 from v3_polys import build
 SCALE = int(sys.argv[1]); TAG = sys.argv[2]; CMN = Path(sys.argv[3])

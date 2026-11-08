@@ -10,7 +10,7 @@ import re, sys, json, importlib.util
 from pathlib import Path
 from xml.sax.saxutils import escape
 import pandas as pd, geopandas as gpd
-ROOT = Path("/workspace/apple_orchard_project"); REV = ROOT / "python/revision"; sys.path.insert(0, str(REV / "figures_v3_scripts"))
+ROOT = Path("/workspace/apple_orchard_project"); REV = ROOT / "python/revision"; sys.path.insert(0, str(REV))
 import official_boundary as ob
 spec = importlib.util.spec_from_file_location("v3m", REV / "22_b3_poly_holdout_v3.py"); v3m = importlib.util.module_from_spec(spec); spec.loader.exec_module(v3m)
 KIT = ROOT / "outputs/revision/v4_experiments/training_expansion_kit"; OUT = ROOT / "outputs/revision/v4_experiments/retrain_expanded"; OUT.mkdir(parents=True, exist_ok=True)

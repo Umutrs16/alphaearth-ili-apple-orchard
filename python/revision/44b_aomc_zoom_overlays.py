@@ -10,7 +10,7 @@ from rasterio.warp import reproject, Resampling
 from rasterio.features import shapes
 from shapely.geometry import shape, box
 from PIL import Image
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts")); import official_boundary as ob
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision")); import official_boundary as ob
 sys.path.insert(0, str(ROOT / "outputs/revision/v4_writing/figures")); from v4style import plt, CM
 E = ROOT / "outputs/revision/v4_experiments/retrain_expanded"; OUT = ROOT / "outputs/revision/v41_review/aomc_alignment"; FO = ROOT / "outputs/revision/v41_review/figures"
 TC = OUT / "_tiles"; TC.mkdir(exist_ok=True)

@@ -14,7 +14,7 @@ from rasterio import features
 from scipy import ndimage
 from shapely.geometry import shape, mapping, Point
 ROOT = Path("/workspace/apple_orchard_project"); REV = ROOT / "python/revision"
-sys.path.insert(0, str(REV)); sys.path.insert(0, str(REV / "figures_v3_scripts"))
+sys.path.insert(0, str(REV)); sys.path.insert(0, str(REV))
 import official_boundary as ob
 from kml_utils import write_kml, style
 OUT = ROOT / "outputs/revision/xinyuan_holdout"; KIT = OUT / "kit"; KIT.mkdir(parents=True, exist_ok=True)

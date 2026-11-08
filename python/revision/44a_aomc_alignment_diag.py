@@ -9,7 +9,7 @@ import numpy as np, pandas as pd, geopandas as gpd, rasterio
 from rasterio.warp import reproject, Resampling, transform_bounds
 from rasterio.features import rasterize
 from rasterio.windows import from_bounds, Window
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts")); import official_boundary as ob
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision")); import official_boundary as ob
 V4 = ROOT / "outputs/revision/v4_experiments"; E = V4 / "retrain_expanded"; OUT = ROOT / "outputs/revision/v41_review/aomc_alignment"; OUT.mkdir(parents=True, exist_ok=True)
 AOMC = ROOT / "data/aomc/AOMC_30_Xinjiang_2021.tif"
 M10 = E / "county_map_B3/gongliu_B3expanded_class_10m.tif"; M30 = E / "county_map_B3/gongliu_B3expanded_class_30m.tif"

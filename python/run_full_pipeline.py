@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""一键运行完整流水线：纯化 → 训练 → 迁移 → 面积不确定性 → 制图 → 论文。"""
+"""一键运行完整流水线：纯化 → 训练 → 迁移 → 面积不确定性。"""
 from __future__ import annotations
 
 import argparse
@@ -45,15 +45,9 @@ def main():
     from scale_uncertainty import main as scale_main
     scale_main(mode, args.config)
 
-    from make_figures import main as fig_main
-    figs = fig_main(mode, args.config)
-
-    from write_paper import main as paper_main
-    paper = paper_main(mode, args.config)
-
     dt = time.time() - t0
-    log.info("==== 完成 %.1fs | figures=%d | paper=%s ====", dt, len(figs), paper)
-    print(f"SUCCESS mode={mode} figures={len(figs)} paper={paper} elapsed_s={dt:.1f}")
+    log.info("==== 完成 %.1fs ====", dt)
+    print(f"SUCCESS mode={mode} elapsed_s={dt:.1f}")
 
 
 if __name__ == "__main__":

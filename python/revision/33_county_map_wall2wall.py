@@ -6,7 +6,7 @@ import sys, os, time, json, urllib.request
 from pathlib import Path
 import numpy as np, joblib, rasterio, ee
 from shapely.geometry import box
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts"))
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision"))
 import official_boundary as ob
 SCALE = int(sys.argv[1]) if len(sys.argv) > 1 else 30
 TILE = float(sys.argv[2]) if len(sys.argv) > 2 else 0.1

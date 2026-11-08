@@ -831,7 +831,7 @@ def main():
         "zooms": zoom_meta,
         "failures": all_failures,
         "colormap": "viridis (probability); binary dark/gold",
-        "paper_caveat_zh_en": (
+        "caveat_zh_en": (
             "制图在 GEE 非商业计算配额受限模式下完成：巩留全县约四千余平方公里无法按 10 m 全覆盖导出，"
             "故采用覆盖两处空间留出簇的焦点 AOI，以约 100 m 规则格网通过 getDownloadURL 分块下载 "
             "AlphaEarth 2021 年度嵌入并本地预测；另对四处约 2–3 km 窗口按 10 m（失败则 30 m）下载预测。"

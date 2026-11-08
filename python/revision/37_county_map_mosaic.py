@@ -8,7 +8,7 @@ from rasterio.merge import merge
 from rasterio.features import geometry_mask
 from rasterio.windows import Window
 from shapely.geometry import mapping
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts"))
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision"))
 import official_boundary as ob
 SCALE = int(sys.argv[1]); O = Path(os.environ.get("CM_OUT", str(ROOT / "outputs/revision/v4_experiments/county_map"))); TAG = os.environ.get("CM_TAG", "B3poly2021v2"); TD = O / f"tiles_{SCALE}m"; TMP = O / f"_u8_{SCALE}m"; TMP.mkdir(exist_ok=True)
 gl = ob.gongliu().geometry.iloc[0]

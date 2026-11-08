@@ -8,7 +8,7 @@ from pathlib import Path
 import numpy as np, pandas as pd, geopandas as gpd, rasterio, ee
 from shapely.geometry import Point
 from shapely.ops import unary_union
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts"))
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision"))
 import official_boundary as ob
 KIT = ROOT / "outputs/revision/v4_experiments/training_expansion_kit"
 d = pd.read_csv(KIT / "_candidates_scored.csv").dropna(subset=["b3_prob"]).reset_index(drop=True)

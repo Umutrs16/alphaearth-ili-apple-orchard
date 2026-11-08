@@ -6,7 +6,7 @@ import sys, json, time
 from pathlib import Path
 import numpy as np, pandas as pd, geopandas as gpd, ee, joblib
 from shapely.geometry import mapping
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts"))
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision"))
 import official_boundary as ob
 KIT = ROOT / "outputs/revision/v4_experiments/training_expansion_kit"
 COUNTIES = ["特克斯县", "伊宁县", "新源县", "察布查尔锡伯自治县", "尼勒克县", "霍城县"]

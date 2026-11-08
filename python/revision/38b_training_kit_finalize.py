@@ -12,7 +12,7 @@ from pathlib import Path
 from xml.sax.saxutils import escape
 import numpy as np, pandas as pd, geopandas as gpd, rasterio
 from shapely.ops import unary_union
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts"))
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision"))
 import official_boundary as ob
 KIT = ROOT / "outputs/revision/v4_experiments/training_expansion_kit"
 E = pd.read_csv(KIT / "_v1_0001-0174" / "YL_TRN_candidates.csv")

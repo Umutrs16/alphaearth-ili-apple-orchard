@@ -8,7 +8,7 @@ import sys, json, hashlib, datetime
 from pathlib import Path
 import numpy as np, pandas as pd, geopandas as gpd, joblib
 ROOT = Path("/workspace/apple_orchard_project"); REV = ROOT / "python/revision"
-sys.path.insert(0, str(ROOT / "python")); sys.path.insert(0, str(REV)); sys.path.insert(0, str(REV / "figures_v3_scripts"))
+sys.path.insert(0, str(ROOT / "python")); sys.path.insert(0, str(REV)); sys.path.insert(0, str(REV))
 from common import make_lgbm
 from utils import feature_columns
 import official_boundary as ob

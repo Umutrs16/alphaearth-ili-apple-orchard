@@ -12,7 +12,7 @@ from rasterio.features import shapes, rasterize
 from scipy import ndimage
 from shapely.geometry import shape
 from shapely.ops import unary_union
-ROOT = Path("/workspace/apple_orchard_project"); REV = ROOT / "python/revision"; sys.path.insert(0, str(REV)); sys.path.insert(0, str(REV / "figures_v3_scripts"))
+ROOT = Path("/workspace/apple_orchard_project"); REV = ROOT / "python/revision"; sys.path.insert(0, str(REV)); sys.path.insert(0, str(REV))
 import official_boundary as ob; from kml_utils import write_kml, style
 E = ROOT / "outputs/revision/v4_experiments/retrain_expanded"; OUT = ROOT / "outputs/revision/v41_review/kits/map_agreement_check"; OUT.mkdir(parents=True, exist_ok=True)
 SEED = 20260926; N = 20; rng = np.random.default_rng(SEED)

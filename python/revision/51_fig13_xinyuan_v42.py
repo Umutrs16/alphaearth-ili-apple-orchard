@@ -3,7 +3,7 @@
 import sys, json
 from pathlib import Path
 import pandas as pd, geopandas as gpd, matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
-ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts")); import official_boundary as ob
+ROOT = Path("/workspace/apple_orchard_project"); sys.path.insert(0, str(ROOT / "python/revision")); import official_boundary as ob
 X = ROOT / "outputs/revision/xinyuan_holdout"; OUT = ROOT / "outputs/revision/v42/figures"
 plt.rcParams["font.sans-serif"] = ["Noto Sans CJK SC", "DejaVu Sans"]; plt.rcParams["axes.unicode_minus"] = False
 c = ob.county(); xy = c[c.name == "新源县"]; nb = c[c.intersects(xy.geometry.iloc[0].buffer(0.4))]

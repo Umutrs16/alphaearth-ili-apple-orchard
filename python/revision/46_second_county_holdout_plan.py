@@ -6,7 +6,7 @@ import pandas as pd, json
 ROOT = Path("/workspace/apple_orchard_project"); E = ROOT / "outputs/revision/v4_experiments/retrain_expanded"; OUT = ROOT / "outputs/revision/v41_review/second_county_plan"; OUT.mkdir(parents=True, exist_ok=True)
 m = pd.read_csv(E / "split_manifest_expanded.csv"); t = m[m.split == "train"].copy()
 import geopandas as gpd, sys
-sys.path.insert(0, str(ROOT / "python/revision/figures_v3_scripts")); import official_boundary as ob
+sys.path.insert(0, str(ROOT / "python/revision")); import official_boundary as ob
 cty = ob.county(); miss = t.county.isna()
 g = gpd.GeoDataFrame(t[miss], geometry=gpd.points_from_xy(t[miss].cen_lon, t[miss].cen_lat), crs=4326)
 j = gpd.sjoin(g, cty[["name", "geometry"]].rename(columns={"name": "cty_name"}), how="left", predicate="within")

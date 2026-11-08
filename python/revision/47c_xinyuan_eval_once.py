@@ -11,7 +11,7 @@ import numpy as np, pandas as pd, geopandas as gpd, joblib
 from shapely.ops import unary_union
 from sklearn.metrics import f1_score, precision_score, recall_score, average_precision_score
 ROOT = Path("/workspace/apple_orchard_project"); REV = ROOT / "python/revision"
-sys.path.insert(0, str(ROOT / "python")); sys.path.insert(0, str(REV)); sys.path.insert(0, str(REV / "figures_v3_scripts"))
+sys.path.insert(0, str(ROOT / "python")); sys.path.insert(0, str(REV)); sys.path.insert(0, str(REV))
 import official_boundary as ob
 from utils import feature_columns
 spec = importlib.util.spec_from_file_location("v3m", REV / "22_b3_poly_holdout_v3.py"); v3m = importlib.util.module_from_spec(spec); spec.loader.exec_module(v3m)
