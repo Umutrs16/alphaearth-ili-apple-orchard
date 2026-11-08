@@ -24,6 +24,7 @@ STEPS = [
     ("11_sample_2024.py", False),  # GEE optional
     ("10_maps_preview.py", False),  # GEE
     ("12_make_figures.py", True),
+    ("13_write_paper.py", True),
 ]
 
 
