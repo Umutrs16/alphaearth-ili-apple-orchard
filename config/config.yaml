@@ -1,0 +1,102 @@
+project:
+  name: AlphaEarth_Yili_AppleOrchard
+  title_zh: AlphaEarth卫星嵌入驱动的伊犁河谷苹果园少样本制图与跨年度泛化研究
+  gee_project: hallowed-chain-458005-g9
+  mode: gee
+aoi:
+  name: Gongliu_county
+  lon_min: 82.0
+  lon_max: 82.8
+  lat_min: 43.1
+  lat_max: 43.6
+  expand_name: Ili_Valley
+years:
+  all:
+  - 2019
+  - 2020
+  - 2021
+  - 2022
+  - 2023
+  - 2024
+  train:
+  - 2019
+  - 2020
+  - 2021
+  transfer:
+  - 2022
+  - 2023
+  - 2024
+data:
+  aomc_dir: data/aomc
+  aomc_figshare:
+    article: 28113302
+    2019: https://ndownloader.figshare.com/files/61427734
+    2020: https://ndownloader.figshare.com/files/61427773
+    2021: https://ndownloader.figshare.com/files/61427812
+  samples_dir: data/samples
+  features_dir: data/features
+gee:
+  s2: COPERNICUS/S2_SR_HARMONIZED
+  s1: COPERNICUS/S1_GRD
+  alphaearth: GOOGLE/SATELLITE_EMBEDDING/V1/ANNUAL
+  dem: USGS/SRTMGL1_003
+  cloud_prob_max: 40
+  scale_m: 30
+models:
+  M0:
+    name: RF_S2
+    type: RandomForest
+    features:
+    - s2
+  M1:
+    name: LGBM_S1S2DEM
+    type: LightGBM
+    features:
+    - s1
+    - s2
+    - dem
+  M2:
+    name: LGBM_AE
+    type: LightGBM
+    features:
+    - ae
+  M3:
+    name: LGBM_AE_S2
+    type: LightGBM
+    features:
+    - ae
+    - s2
+  M4:
+    name: LGBM_Fusion
+    type: LightGBM
+    features:
+    - ae
+    - s1
+    - s2
+    - dem
+  M5:
+    name: LGBM_Fusion_Calib
+    type: LightGBM
+    features:
+    - ae
+    - s1
+    - s2
+    - dem
+    calibrate: true
+training:
+  n_samples_per_class: 600
+  test_ratio: 0.3
+  spatial_block_size_deg: 0.05
+  random_seed: 42
+  n_bootstrap: 200
+  n_estimators: 200
+  max_depth: 12
+outputs:
+  figures: outputs/figures
+  tables: outputs/tables
+  metrics: outputs/metrics
+  paper: outputs/paper
+  models: outputs/models
+demo:
+  watermark: true
+  label: '[DEMO] 合成样本/模拟特征 — 非正式GEE生产结果'
